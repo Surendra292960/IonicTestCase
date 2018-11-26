@@ -1,0 +1,81 @@
+<ion-header>
+    <ion-navbar color="dark">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>Slider
+      </button>
+      <!-- <ion-title>Home</ion-title> -->
+    </ion-navbar>
+  </ion-header>
+  
+  
+  <ion-header>
+    <ion-navbar color="dark">
+      <button ion-button menuToggle="left" start>
+        <ion-icon name="menu"></ion-icon>Slider
+      </button>
+      <!-- <ion-title>
+        Home
+      </ion-title> -->
+      <button ion-button menuToggle="right" end>
+          <!-- <ion-icon name="search"></ion-icon> -->
+        </button>
+      <button ion-button menuToggle="right" end>
+          <ion-icon name="search"></ion-icon>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content class="tutorial-page">
+    <ion-slides pager id ="firstslider">
+      <ion-slide *ngFor="let slide of slides" id="minislider1">
+        <ion-toolbar>
+          <ion-buttons end>
+            <button ion-button color="primary">Skip</button>
+          </ion-buttons>
+        </ion-toolbar>
+        <img [src]="slide.image" class="slide-image"/>
+        <h2 class="slide-title" [innerHTML]="slide.title"></h2>
+        <p [innerHTML]="slide.description"></p>
+      </ion-slide>
+      <ion-slide id="minislider2">
+        <ion-toolbar id="toolbar">
+        </ion-toolbar>
+        <img src="assets/imgs/pump.png" class="slide-image"/>
+        <h2 class="slide-title">Ready to Play?</h2>
+        <button ion-button large clear icon-end color="primary">Continue
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+
+
+        <ion-item class="data.properties['Load_Type']" id="secondry-content">
+            <ion-label>{{data.properties["Load_Type"].lable}}</ion-label>
+            <ion-input></ion-input>
+            <ion-select  interface="popover">
+                <ion-option  value="data.properties['Load_Type'].values['0']">{{data.properties["Load_Type"].values['0']}}</ion-option>
+                <ion-option value="data.properties['Load_Type'].values['1']">{{data.properties["Load_Type"].values['1']}}</ion-option>
+            </ion-select>
+        </ion-item>
+
+
+        <ion-item class="data.properties['Email_Type']" id="secondry-content">
+            <ion-label>{{data.properties["Email_Type"].lable}}</ion-label>
+            <ion-input></ion-input>
+            <ion-select  interface="popover">
+                <ion-option  value="data.properties['Email_Type'].values['0']">{{data.properties["Email_Type"].values['0']}}</ion-option>
+                <ion-option value="data.properties['Email_Type'].values['1']">{{data.properties["Email_Type"].values['1']}}</ion-option>
+                <ion-option value="data.properties['Email_Type'].values['2']">{{data.properties["Email_Type"].values['2']}}</ion-option>
+                <ion-option value="data.properties['Email_Type'].values['3']">{{data.properties["Email_Type"].values['3']}}</ion-option>
+
+              </ion-select>
+        </ion-item>
+
+        
+
+
+      </ion-slide>
+    </ion-slides>
+
+  </ion-content>
+      
